@@ -1,0 +1,463 @@
+/* ============================================================
+   Mini Dashboard — Estilos principales
+   ============================================================ */
+
+/* --- Reset y base ----------------------------------------- */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #1a1a2e;
+  color: #e0e0e0;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+/* --- Contenedor principal ---------------------------------- */
+
+#dashboard {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* --- Encabezado ------------------------------------------- */
+
+.dashboard-header {
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative; /* necesario para posicionar el botón de tema */
+}
+
+.dashboard-header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+}
+
+.greeting {
+  font-size: 0.95rem;
+  color: #7a8aaa;
+  margin-top: 0.25rem;
+}
+
+/* --- Botón de tema ---------------------------------------- */
+
+.theme-btn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: 1px solid #1e4a8a;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+  padding: 0.35rem 0.5rem;
+  transition: background-color 0.15s, border-color 0.15s;
+}
+
+.theme-btn:hover {
+  background-color: #16213e;
+  border-color: #4ecca3;
+}
+
+/* --- Grid de tarjetas ------------------------------------- */
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+/* --- Tarjeta base ----------------------------------------- */
+
+.card {
+  background-color: #16213e;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card--full {
+  grid-column: 1 / -1;
+}
+
+.card-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #7a8aaa;
+  margin-bottom: 1rem;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* --- Reloj ------------------------------------------------ */
+
+.clock-time {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.clock-date {
+  font-size: 0.9rem;
+  color: #7a8aaa;
+}
+
+/* --- Clima ------------------------------------------------ */
+
+.weather-search {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.weather-loading {
+  font-size: 0.9rem;
+  color: #7a8aaa;
+}
+
+.weather-result {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 0.25rem;
+}
+
+.weather-main {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.weather-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.weather-temp {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.weather-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.weather-city {
+  font-size: 0.95rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.weather-desc {
+  font-size: 0.85rem;
+  color: #7a8aaa;
+}
+
+.weather-wind {
+  font-size: 0.85rem;
+  color: #7a8aaa;
+}
+
+/* --- Historial de clima ----------------------------------- */
+
+.weather-history {
+  padding-top: 0.75rem;
+  border-top: 1px solid #1e4a8a;
+}
+
+.weather-history-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #7a8aaa;
+  margin-bottom: 0.4rem;
+}
+
+.weather-history-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.weather-history-item {
+  background-color: #0f3460;
+  border: 1px solid #1e4a8a;
+  border-radius: 20px;
+  color: #e0e0e0;
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding: 0.25rem 0.65rem;
+  transition: background-color 0.15s, border-color 0.15s;
+}
+
+.weather-history-item:hover {
+  background-color: #1e4a8a;
+  border-color: #4ecca3;
+}
+
+/* --- Tareas ----------------------------------------------- */
+
+.tasks-counter {
+  background-color: #4ecca3;
+  border-radius: 20px;
+  color: #1a1a2e;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  vertical-align: middle;
+}
+
+.tasks-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tasks-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background-color: #0f3460;
+  border-radius: 8px;
+  transition: opacity 0.2s;
+}
+
+.task-item.done {
+  opacity: 0.5;
+}
+
+.task-item.done .task-text {
+  text-decoration: line-through;
+}
+
+.task-checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: #4ecca3;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.task-text {
+  flex: 1;
+  font-size: 0.95rem;
+}
+
+.task-delete {
+  background: none;
+  border: none;
+  color: #e94560;
+  font-size: 1.1rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 0.25rem;
+  opacity: 0.6;
+  transition: opacity 0.15s;
+  flex-shrink: 0;
+}
+
+.task-delete:hover {
+  opacity: 1;
+}
+
+.tasks-empty {
+  font-size: 0.9rem;
+  color: #7a8aaa;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* --- Controles compartidos -------------------------------- */
+
+.input {
+  flex: 1;
+  background-color: #0f3460;
+  border: 1px solid #1e4a8a;
+  border-radius: 8px;
+  color: #e0e0e0;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.75rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.input::placeholder {
+  color: #4a5a7a;
+}
+
+.input:focus {
+  border-color: #4ecca3;
+}
+
+.btn {
+  background-color: #4ecca3;
+  border: none;
+  border-radius: 8px;
+  color: #1a1a2e;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.15s;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  background-color: #3ab890;
+}
+
+/* --- Utilidades ------------------------------------------- */
+
+.hidden {
+  display: none;
+}
+
+.error-msg {
+  font-size: 0.85rem;
+  color: #e94560;
+}
+
+/* --- Modo claro ------------------------------------------- */
+/* Cuando JS añade la clase "light" al <body>, estos estilos sobreescriben
+   los colores del modo oscuro. Solo se listan los valores que cambian. */
+
+body.light {
+  background-color: #f0f2f5;
+  color: #1a1a2e;
+}
+
+body.light .dashboard-header h1 {
+  color: #1a1a2e;
+}
+
+body.light .greeting {
+  color: #6a7a9a;
+}
+
+body.light .theme-btn {
+  border-color: #c5d0e0;
+}
+
+body.light .theme-btn:hover {
+  background-color: #e8edf5;
+  border-color: #4ecca3;
+}
+
+body.light .card {
+  background-color: #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+body.light .card-title {
+  color: #6a7a9a;
+}
+
+body.light .clock-time {
+  color: #1a1a2e;
+}
+
+body.light .clock-date {
+  color: #6a7a9a;
+}
+
+body.light .weather-loading {
+  color: #6a7a9a;
+}
+
+body.light .weather-temp {
+  color: #1a1a2e;
+}
+
+body.light .weather-city {
+  color: #1a1a2e;
+}
+
+body.light .weather-desc,
+body.light .weather-wind {
+  color: #6a7a9a;
+}
+
+body.light .weather-history {
+  border-top-color: #c5d0e0;
+}
+
+body.light .weather-history-label {
+  color: #6a7a9a;
+}
+
+body.light .weather-history-item {
+  background-color: #e8edf5;
+  border-color: #c5d0e0;
+  color: #1a1a2e;
+}
+
+body.light .weather-history-item:hover {
+  background-color: #d0daea;
+  border-color: #4ecca3;
+}
+
+body.light .task-item {
+  background-color: #e8edf5;
+}
+
+body.light .tasks-empty {
+  color: #6a7a9a;
+}
+
+body.light .input {
+  background-color: #e8edf5;
+  border-color: #c5d0e0;
+  color: #1a1a2e;
+}
+
+body.light .input::placeholder {
+  color: #8a9ab5;
+}
+
+body.light .error-msg {
+  color: #c0284a;
+}
+
+/* --- Responsive ------------------------------------------- */
+
+@media (max-width: 600px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card--full {
+    grid-column: 1;
+  }
+
+  .clock-time {
+    font-size: 2.2rem;
+  }
+}
